@@ -85,9 +85,9 @@ class DBManager:
                 rel  = round(1 - dist, 2)
                 pg   = meta["page_no"]
                 parts.append(
-                    f"[{key.upper()} | Page {pg} of {mp}] — {meta.get('heading','')}\n"
+                    f"SOURCE: {key.upper()} | Page {pg} of {mp} | {meta.get('heading','')}\n"
                     f"Relevance: {rel}\n{doc[:700]}\n"
-                    f"CITE ONLY Page {pg} from {key}. Total pages: {mp}."
+                    f"(Cite as: Page {pg}. Document has {mp} pages total.)"
                 )
             return "\n\n".join(parts)
         except Exception as e:
@@ -211,7 +211,8 @@ def generate_node(state: AgentState) -> AgentState:
     ctx_parts = []
     for key in ["db1","db2","db3","db4"]:
         r = state.get(f"{key}_results","")
-        if r and not r.startswith("["):
+        # Only skip if empty or is an error message (starts with [Error or [Search error)
+        if r and not r.startswith("[Error") and not r.startswith("[Search error"):
             ctx_parts.append(f"=== {key.upper()} ===\n{r}")
     if not ctx_parts:
         ans = "This information was not found in any of the loaded documents."
@@ -223,16 +224,22 @@ def generate_node(state: AgentState) -> AgentState:
 
     ctx  = "\n\n".join(ctx_parts)
     hist = state.get("history_context","")
-    sys  = ("You are a strict document-only assistant.\n"
-            "RULES:\n"
-            "- Answer ONLY from the context below\n"
-            "- ONLY cite page numbers that appear in the context\n"
-            "- NEVER invent page numbers or facts\n"
-            "- If not found: say 'Not found in document'\n"
-            "- Be concise and cite sources like (Page 5)")
-    usr  = (f"Document context:\n{ctx}\n\n"
-            + (f"Previous chat:\n{hist}\n\n" if hist else "")
-            + f"Question: {state['user_query']}\n\nAnswer:")
+    sys  = """You are a helpful document Q&A assistant. You have been given text chunks extracted from a PDF document.
+
+YOUR JOB: Answer the user's question using the document context provided below.
+
+RULES:
+- Read the context carefully and answer based on what is written there
+- Cite page numbers like (Page 5) when you use information from a specific page
+- If the context contains relevant information, USE IT to answer — do not say "not found"
+- Only say "This information is not in the document" if the context truly has NO relevant information
+- Be helpful, clear and concise
+- You may summarize and explain information from the context in your own words"""
+
+    usr  = (f"DOCUMENT CONTEXT (extracted from PDF):\n\n{ctx}\n\n"
+            + (f"PREVIOUS CONVERSATION:\n{hist}\n\n" if hist else "")
+            + f"USER QUESTION: {state['user_query']}\n\n"
+            + "Please answer the question based on the document context above:")
     print("   ✍️  Generating answer...")
     ans = _llm([{"role":"system","content":sys},{"role":"user","content":usr}])
     new_hist = state.get("chat_history",[]) + [
@@ -308,8 +315,16 @@ class LangGraphRAG:
         print("🔄 History cleared.")
 
     def get_collection_stats(self):
+        # Refresh DB manager to pick up newly ingested collections
+        global _db_manager
+        _db_manager = DBManager()
         avail = _get_db().available()
-        total = sum(_get_db().cols[k].count() for k in avail if k in _get_db().cols)
+        total = 0
+        for k in avail:
+            try:
+                total += _get_db().cols[k].count()
+            except Exception:
+                pass  # Collection was replaced — ignore stale reference
         return {
             "status":"ready" if avail else "empty",
             "count":total,

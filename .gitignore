@@ -1,0 +1,21 @@
+# Environment files
+.env
+api.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+
+# ChromaDB
+chroma_db/
+
+# Generated outputs
+chunks.json
+failed_pages.json
+
+# OS files
+.DS_Store
+Thumbs.db

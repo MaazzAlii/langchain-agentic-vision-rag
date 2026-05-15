@@ -16,16 +16,26 @@ def _cfg():
     )
     return locals()
 
-VISION_PROMPT = """Analyze this PDF page image carefully.
-Return ONLY a valid JSON object with no extra text or markdown fences:
+VISION_PROMPT = """You are an expert document analyzer. Carefully examine this page image and extract ALL visible content.
+
+This page may contain: text, tables, diagrams, handwritten notes, mathematical equations, use case diagrams, ER diagrams, flowcharts, images, figures, or any combination.
+
+Return ONLY a valid JSON object. No markdown fences, no extra text before or after. Use this exact structure:
 {
-  "heading": "<main heading or 'No Heading'>",
-  "sub_headings": ["<sub1>", "<sub2>"],
-  "content_markdown": "<full page text as markdown>",
-  "summary": "<1-2 sentence summary>",
-  "keywords": ["<kw1>", "<kw2>", "<kw3>"],
-  "page_type": "<introduction|content|conclusion|table|figure|other>"
-}"""
+  "heading": "<main heading on this page, or Section number, or No Heading if none>",
+  "sub_headings": ["<any sub-headings found>"],
+  "content_markdown": "<ALL text content you can see on this page. For tables: use markdown table format. For diagrams/figures: describe what you see in detail. For math: write equations in plain text. For handwriting: transcribe it. NEVER leave this empty - always write something>",
+  "summary": "<1-2 sentences describing what this page is about>",
+  "keywords": ["<3-5 important keywords from this page>"],
+  "page_type": "<choose one: introduction|content|conclusion|table|figure|diagram|requirements|chapter|references|other>"
+}
+
+CRITICAL RULES:
+- content_markdown MUST NOT be empty - describe anything you see
+- For blank/nearly blank pages: write what little you see (page number, chapter title, etc.)
+- For diagram pages: describe the diagram components and relationships in text
+- For table pages: reproduce the table in markdown format
+- Always return valid JSON"""
 
 # ── Helpers ───────────────────────────────────────────────────────
 def _to_b64(image):
@@ -34,15 +44,72 @@ def _to_b64(image):
     return base64.b64encode(buf.getvalue()).decode()
 
 def _parse_json(raw):
+    """Robustly parse LLM JSON — handles fences, partial JSON, empty fields."""
+    if not raw:
+        return None
     raw = raw.strip()
-    if raw.startswith("```"):
-        raw = "\n".join(raw.split("\n")[1:-1])
+
+    # Remove markdown fences like ```json ... ```
+    if "```" in raw:
+        lines = raw.split("\n")
+        inner_lines = []
+        in_fence = False
+        for line in lines:
+            if line.strip().startswith("```"):
+                in_fence = not in_fence
+                continue
+            inner_lines.append(line)
+        raw = "\n".join(inner_lines).strip()
+
+    # Extract JSON object if surrounded by extra text
+    if not raw.startswith("{"):
+        start = raw.find("{")
+        if start != -1:
+            raw = raw[start:]
+
+    # Find matching closing brace
+    if raw.startswith("{"):
+        depth, end_idx = 0, -1
+        for i, ch in enumerate(raw):
+            if ch == "{": depth += 1
+            elif ch == "}":
+                depth -= 1
+                if depth == 0:
+                    end_idx = i; break
+        if end_idx != -1:
+            raw = raw[:end_idx+1]
+
     try:
         d = json.loads(raw)
-        if d.get("content_markdown", "").strip():
-            return d
-        return None
-    except Exception:
+        # If content_markdown is empty, build it from other fields
+        if not d.get("content_markdown", "").strip():
+            parts = []
+            if d.get("heading"):
+                parts.append("# " + d["heading"])
+            for sh in d.get("sub_headings", []):
+                parts.append("## " + sh)
+            if d.get("summary"):
+                parts.append(d["summary"])
+            if parts:
+                d["content_markdown"] = "\n\n".join(parts)
+            else:
+                return None
+        return d
+    except json.JSONDecodeError:
+        # Last resort regex extraction
+        import re
+        cm = re.search(r'"content_markdown"\s*:\s*"(.*?)(?<!\\)"', raw, re.DOTALL)
+        hd = re.search(r'"heading"\s*:\s*"(.*?)(?<!\\)"', raw)
+        sm = re.search(r'"summary"\s*:\s*"(.*?)(?<!\\)"', raw)
+        if cm or hd or sm:
+            return {
+                "heading": hd.group(1) if hd else "Unknown",
+                "sub_headings": [],
+                "content_markdown": cm.group(1) if cm else (sm.group(1) if sm else ""),
+                "summary": sm.group(1) if sm else "",
+                "keywords": [],
+                "page_type": "content"
+            }
         return None
 
 # ── Vision LLM ───────────────────────────────────────────────────
