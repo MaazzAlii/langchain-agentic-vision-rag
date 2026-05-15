@@ -1,0 +1,520 @@
+[
+  {
+    "chunk_id": "chunk_0001",
+    "chunk_no": 1,
+    "page_no": 1,
+    "batch_no": 1,
+    "heading": "AI-Assisted Tourism Recommendation and Booking System for Gilgit-Baltistan",
+    "sub_headings": [],
+    "content": "# AI-Assisted Tourism Recommendation and Booking System for Gilgit-Baltistan\n\nYour Name Here\nRegistration Number\n\nSupervised By\nSupervisor Name\n\nSubmitted for the partial fulfillment of BS Computer Science to the Faculty of\nEngineering & Computer Science\n\nNATIONAL UNIVERSITY OF MODERN LANGUAGES\nISLAMABAD\n\nJanuary, 2026",
+    "summary": "This document is a title page for a BS Computer Science project focused on an AI-assisted tourism recommendation and booking system specifically for Gilgit-Baltistan, submitted to the National University of Modern Languages, Islamabad.",
+    "keywords": [
+      "AI-Assisted",
+      "Tourism",
+      "Recommendation System",
+      "Booking System",
+      "Gilgit-Baltistan",
+      "Computer Science",
+      "National University of Modern Languages"
+    ],
+    "page_type": "introduction",
+    "extraction_failed": false
+  },
+  {
+    "chunk_id": "chunk_0002",
+    "chunk_no": 2,
+    "page_no": 2,
+    "batch_no": 1,
+    "heading": "Page 2 — Extraction Failed",
+    "sub_headings": [],
+    "content": "",
+    "summary": "Page 2 failed.",
+    "keywords": [],
+    "page_type": "other",
+    "extraction_failed": true
+  },
+  {
+    "chunk_id": "chunk_0003",
+    "chunk_no": 3,
+    "page_no": 3,
+    "batch_no": 1,
+    "heading": "Page 3 — Extraction Failed",
+    "sub_headings": [],
+    "content": "",
+    "summary": "Page 3 failed.",
+    "keywords": [],
+    "page_type": "other",
+    "extraction_failed": true
+  },
+  {
+    "chunk_id": "chunk_0004",
+    "chunk_no": 4,
+    "page_no": 4,
+    "batch_no": 1,
+    "heading": "Chapter 1",
+    "sub_headings": [
+      "INTRODUCTION"
+    ],
+    "content": "# Chapter 1\n\n## INTRODUCTION",
+    "summary": "The image shows the title of Chapter 1 with the subheading 'Introduction'.",
+    "keywords": [
+      "Chapter",
+      "Introduction"
+    ],
+    "page_type": "introduction",
+    "extraction_failed": false
+  },
+  {
+    "chunk_id": "chunk_0005",
+    "chunk_no": 5,
+    "page_no": 5,
+    "batch_no": 1,
+    "heading": "Page 5 — Extraction Failed",
+    "sub_headings": [],
+    "content": "",
+    "summary": "Page 5 failed.",
+    "keywords": [],
+    "page_type": "other",
+    "extraction_failed": true
+  },
+  {
+    "chunk_id": "chunk_0006",
+    "chunk_no": 6,
+    "page_no": 6,
+    "batch_no": 2,
+    "heading": "Page 6 — Extraction Failed",
+    "sub_headings": [],
+    "content": "",
+    "summary": "Page 6 failed.",
+    "keywords": [],
+    "page_type": "other",
+    "extraction_failed": true
+  },
+  {
+    "chunk_id": "chunk_0007",
+    "chunk_no": 7,
+    "page_no": 7,
+    "batch_no": 2,
+    "heading": "Page 7 — Extraction Failed",
+    "sub_headings": [],
+    "content": "",
+    "summary": "Page 7 failed.",
+    "keywords": [],
+    "page_type": "other",
+    "extraction_failed": true
+  },
+  {
+    "chunk_id": "chunk_0008",
+    "chunk_no": 8,
+    "page_no": 8,
+    "batch_no": 2,
+    "heading": "No Heading",
+    "sub_headings": [
+      "Key Features",
+      "1.5 Scope of the Study"
+    ],
+    "content": "- Provide AI-Driven Recommendations: Develop a recommendation engine capable of generating personalized itineraries and service suggestions based on user preferences, budget, and historical data.\n\n- Ensure Secure and Reliable Transactions: Implement robust authentication and payment mechanisms to guarantee safe and trustworthy interactions.\n\n- Enhance User Experience: Offer intuitive web and mobile interfaces for easy navigation, service discovery, and booking.\n\n- Support Local Service Providers: Increase visibility and accessibility for local businesses through centralized listings.\n\n- Implement a Loyalty System: Introduce a multi-tier reward mechanism to encourage user engagement and retention.\n\n- Enable Scalability and Maintainability: Design a modular architecture that can accommodate future enhancements and increased user demand.\n\n### 1.5 Scope of the Study\n\nThis project primarily focuses on the technical design, development, and implementation of a cloud-based tourism platform. The scope is limited to the following core areas:\n\n- **Backend Development:** Implementation of a high-performance backend using FastAPI, featuring modular routing for authentication, bookings, listings, payments, and loyalty management.\n\n- **Frontend Interfaces:** Development of responsive and user-friendly interfaces using ReactJS for web applications and Flutter for cross-platform mobile applications.\n\n- **AI Recommendation Engine:** Integration of a counter-based scoring system to generate personalized travel recommendations.\n\n- **Payment Integration:** Incorporation of secure transaction systems, including mock payment flows and third-party integrations such as Stripe/XPay for real-world payment processing.\n\n- **Cloud Infrastructure:** Utilization of Firebase for real-time database support, authentication services, and cloud functionalities.\n\nThe study does not extend to large-scale deployment, real-time field testing in all regions of Gilgit-Baltistan, or advanced machine learning models beyond the implemented recommendation logic.",
+    "summary": "The document outlines key features and the scope of a cloud-based tourism platform project, focusing on AI-driven recommendations, secure transactions, user experience, local business support, loyalty systems, and scalability. The scope includes backend and frontend development, AI recommendation engines, payment integration, and cloud infrastructure, excluding large-scale deployment and advanced machine learning beyond basic recommendation logic.",
+    "keywords": [
+      "AI-Driven Recommendations",
+      "Secure Transactions",
+      "User Experience",
+      "Local Service Providers",
+      "Loyalty System",
+      "Scalability",
+      "FastAPI",
+      "ReactJS",
+      "Flutter",
+      "Firebase",
+      "Cloud Infrastructure",
+      "Payment Integration"
+    ],
+    "page_type": "content",
+    "extraction_failed": false
+  },
+  {
+    "chunk_id": "chunk_0009",
+    "chunk_no": 9,
+    "page_no": 9,
+    "batch_no": 2,
+    "heading": "Page 9 — Extraction Failed",
+    "sub_headings": [],
+    "content": "",
+    "summary": "Page 9 failed.",
+    "keywords": [],
+    "page_type": "other",
+    "extraction_failed": true
+  },
+  {
+    "chunk_id": "chunk_0010",
+    "chunk_no": 10,
+    "page_no": 10,
+    "batch_no": 2,
+    "heading": "Table of Contents",
+    "sub_headings": [
+      "Chapter 1: Introduction",
+      "Chapter 2: Literature Review",
+      "Chapter 3: System Analysis and Design",
+      "Chapter 4: Implementation",
+      "Chapter 5: Results and Testing",
+      "Chapter 6: Discussion",
+      "Chapter 7: Conclusion and Future Work"
+    ],
+    "content": "- **Chapter 1: Introduction**\n  Provides an overview of the project, including background, motivation, problem statement, proposed solution, objectives, scope, and methodology.\n\n- **Chapter 2: Literature Review**\n  Discusses existing systems, related technologies, and research in tourism platforms and recommendation systems. It highlights gaps that the proposed system aims to address.\n\n- **Chapter 3: System Analysis and Design**\n  Covers system requirements, architectural design, data models, UML diagrams, and workflow representations.\n\n- **Chapter 4: Implementation**\n  Describes the technical implementation of the system, including backend development (FastAPI), frontend development (ReactJS and Flutter), and integration of core modules.\n\n- **Chapter 5: Results and Testing**\n  Presents system testing procedures, results, performance evaluation, and validation of implemented features.\n\n- **Chapter 6: Discussion**\n  Analyzes the outcomes of the project, discusses limitations, and evaluates system effectiveness in addressing the identified problem.\n\n- **Chapter 7: Conclusion and Future Work**\n  Summarizes the project achievements and suggests potential enhancements and future research directions.",
+    "summary": "The document outlines the structure of a project report, detailing chapters from an introduction and literature review to system design, implementation, testing, discussion, and conclusion with future work.",
+    "keywords": [
+      "Introduction",
+      "Literature Review",
+      "System Design",
+      "Implementation",
+      "Testing",
+      "Discussion",
+      "Conclusion",
+      "Tourism Platforms",
+      "Recommendation Systems"
+    ],
+    "page_type": "table",
+    "extraction_failed": false
+  },
+  {
+    "chunk_id": "chunk_0011",
+    "chunk_no": 11,
+    "page_no": 11,
+    "batch_no": 3,
+    "heading": "Chapter 2",
+    "sub_headings": [
+      "EXISTING SYSTEMS"
+    ],
+    "content": "Chapter 2\n\nEXISTING SYSTEMS",
+    "summary": "The image shows the title of Chapter 2, which is 'Existing Systems'.",
+    "keywords": [
+      "Chapter",
+      "Existing Systems"
+    ],
+    "page_type": "introduction",
+    "extraction_failed": false
+  },
+  {
+    "chunk_id": "chunk_0012",
+    "chunk_no": 12,
+    "page_no": 12,
+    "batch_no": 3,
+    "heading": "Page 12 — Extraction Failed",
+    "sub_headings": [],
+    "content": "",
+    "summary": "Page 12 failed.",
+    "keywords": [],
+    "page_type": "other",
+    "extraction_failed": true
+  },
+  {
+    "chunk_id": "chunk_0013",
+    "chunk_no": 13,
+    "page_no": 13,
+    "batch_no": 3,
+    "heading": "Existing Studies and Comparison of Systems",
+    "sub_headings": [
+      "2.3 Existing Studies",
+      "2.4 Comparison of Existing Systems"
+    ],
+    "content": "- Each category (hotel type, destination, transport preference, etc.) accumulates counters based on user activity.\n\n- The system ranks available services by comparing these counters with current listings.\n- Recommendations are generated by prioritizing services with the highest relevance scores.\n\nThis approach provides:\n\n- Fast computation with minimal overhead\n- Real-time adaptability to user behavior\n- Personalization without requiring large datasets or training models\n\n### 2.3 Existing Studies\n\nThe following table summarizes a comparison of traditional and modern tourism systems with the proposed AI-integrated platform:\n\n| System Type               | Description                                                                                     | Limitations                                                                                     | Relevance to Project                                                                                     |\n|---------------------------|-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|\n| Manual Booking System     | Users rely on agents, phone calls, or physical visits to book services                           | Time-consuming, lack of transparency, no personalization                                           | Highlights need for digitization                                                                           |\n| Basic Travel Websites     | Platforms offering hotel or transport booking separately                                          | Fragmented services, limited integration, static recommendations                                    | Shows lack of unified solutions                                                                          |\n| AI-Integrated Platform    | Centralized system integrating hotels, guides, and transport with AI recommendations              | Requires initial development effort and data structuring                                           | Provides complete, scalable solution                                                                     |\n\n### 2.4 Comparison of Existing Systems\n\nThe following feature comparison highlights the uniqueness of the proposed system:",
+    "summary": "The document describes an AI-integrated tourism recommendation system that uses user activity counters to rank and recommend services efficiently. It compares traditional manual booking systems, basic travel websites, and the proposed AI-integrated platform, highlighting the need for digitization, integration, and scalability.",
+    "keywords": [
+      "AI-integrated platform",
+      "user activity counters",
+      "personalization",
+      "tourism systems",
+      "recommendation system"
+    ],
+    "page_type": "content",
+    "extraction_failed": false
+  },
+  {
+    "chunk_id": "chunk_0014",
+    "chunk_no": 14,
+    "page_no": 14,
+    "batch_no": 3,
+    "heading": "Page 14 — Extraction Failed",
+    "sub_headings": [],
+    "content": "",
+    "summary": "Page 14 failed.",
+    "keywords": [],
+    "page_type": "other",
+    "extraction_failed": true
+  },
+  {
+    "chunk_id": "chunk_0015",
+    "chunk_no": 15,
+    "page_no": 15,
+    "batch_no": 3,
+    "heading": "Chapter 3",
+    "sub_headings": [
+      "REQUIREMENTS SPECIFICATIONS"
+    ],
+    "content": "Chapter 3\n\nREQUIREMENTS SPECIFICATIONS",
+    "summary": "The image shows the heading for Chapter 3, which is titled 'Requirements Specifications'.",
+    "keywords": [
+      "Chapter",
+      "Requirements",
+      "Specifications"
+    ],
+    "page_type": "introduction",
+    "extraction_failed": false
+  },
+  {
+    "chunk_id": "chunk_0016",
+    "chunk_no": 16,
+    "page_no": 16,
+    "batch_no": 4,
+    "heading": "3. System Requirements",
+    "sub_headings": [
+      "3.1 Introduction",
+      "3.2 Interface Requirements",
+      "3.2.1 Software Interfaces",
+      "3.2.2 Hardware Interfaces"
+    ],
+    "content": "# 3.1 Introduction\n\nThis chapter outlines the functional and non-functional requirements of the proposed AI-Assisted Tourism Recommendation and Booking System for Gilgit-Baltistan. It defines the system interfaces, core functionalities, and user interactions required to ensure a robust, scalable, and user-centric platform. The specifications serve as a foundation for system design, implementation, and validation.\n\n## 3.2 Interface Requirements\n\nThe system interacts with multiple external and internal components. These interfaces are categorized as follows:\n\n### 3.2.1 Software Interfaces\n\n- **FastAPI Backend:**\n  Serves as the core API layer handling business logic, routing (authentication, bookings, listings, payments, loyalty), and data processing.\n\n- **Firebase Services:**\n  Provides real-time database support, cloud storage, and auxiliary authentication/session handling where required.\n\n- **Stripe API / XPay Integration:**\n  Enables secure payment processing, transaction handling, and payment verification for bookings.\n\n- **Frontend Frameworks (ReactJS & Flutter):**\n  Communicate with backend APIs via RESTful services to render dynamic user interfaces and manage user interactions.\n\n### 3.2.2 Hardware Interfaces\n\n- **Mobile Devices:**\n  Smartphones and tablets running Android/iOS platforms to access the Flutter-based application.\n\n- **Web Browsers:**",
+    "summary": "This section introduces the AI-Assisted Tourism Recommendation and Booking System for Gilgit-Baltistan, detailing its functional and non-functional requirements, system interfaces, and core functionalities. It also categorizes software and hardware interfaces, including FastAPI, Firebase, Stripe API, ReactJS, Flutter, and mobile devices.",
+    "keywords": [
+      "AI-Assisted Tourism",
+      "System Requirements",
+      "FastAPI",
+      "Firebase",
+      "Stripe API",
+      "ReactJS",
+      "Flutter",
+      "Mobile Devices",
+      "Gilgit-Baltistan",
+      "Booking System"
+    ],
+    "page_type": "content",
+    "extraction_failed": false
+  },
+  {
+    "chunk_id": "chunk_0017",
+    "chunk_no": 17,
+    "page_no": 17,
+    "batch_no": 4,
+    "heading": "Page 17 — Extraction Failed",
+    "sub_headings": [],
+    "content": "",
+    "summary": "Page 17 failed.",
+    "keywords": [],
+    "page_type": "other",
+    "extraction_failed": true
+  },
+  {
+    "chunk_id": "chunk_0018",
+    "chunk_no": 18,
+    "page_no": 18,
+    "batch_no": 4,
+    "heading": "Page 18 — Extraction Failed",
+    "sub_headings": [],
+    "content": "",
+    "summary": "Page 18 failed.",
+    "keywords": [],
+    "page_type": "other",
+    "extraction_failed": true
+  },
+  {
+    "chunk_id": "chunk_0019",
+    "chunk_no": 19,
+    "page_no": 19,
+    "batch_no": 4,
+    "heading": "Page 19 — Extraction Failed",
+    "sub_headings": [],
+    "content": "",
+    "summary": "Page 19 failed.",
+    "keywords": [],
+    "page_type": "other",
+    "extraction_failed": true
+  },
+  {
+    "chunk_id": "chunk_0020",
+    "chunk_no": 20,
+    "page_no": 20,
+    "batch_no": 4,
+    "heading": "Primary Flow and Non-Functional Requirements",
+    "sub_headings": [
+      "Primary Flow",
+      "3.6 Non-Functional Requirements",
+      "3.6.1 Reliability",
+      "3.6.2 Security"
+    ],
+    "content": "# Primary Flow:\n\n1. User searches for services.\n\n2. Selects a desired listing.\n\n3. Chooses booking dates and options.\n\n4. Applies a valid coupon code.\n\n5. System recalculates total cost.\n\n6. User proceeds to payment.\n\n7. Payment is processed via Stripe/XPay.\n\n8. Booking is confirmed and stored in history.\n\n## 3.6 Non-Functional Requirements\n\n### 3.6.1 Reliability\n\nThe platform is designed to achieve high availability with a target uptime of 99.9%. This is supported through cloud-based deployment, modular service architecture, and fault-tolerant API design.\n\n### 3.6.2 Security\n\nSecurity is a fundamental requirement of the system, especially due to the handling of user credentials and financial transactions.\n\n- JWT (JSON Web Token)-based authentication\n- Hashed password storage using secure hashing algorithms\n- Secure API endpoints with validation and authorization layers\n- Encrypted communication (HTTPS)",
+    "summary": "The document outlines the primary user flow for booking services and details non-functional requirements focusing on reliability and security, including high availability targets, authentication methods, and secure data handling practices.",
+    "keywords": [
+      "Primary Flow",
+      "Reliability",
+      "Security",
+      "Availability",
+      "Authentication",
+      "HTTPS",
+      "JWT",
+      "Payment Processing"
+    ],
+    "page_type": "content",
+    "extraction_failed": false
+  },
+  {
+    "chunk_id": "chunk_0021",
+    "chunk_no": 21,
+    "page_no": 21,
+    "batch_no": 5,
+    "heading": "Page 21 — Extraction Failed",
+    "sub_headings": [],
+    "content": "",
+    "summary": "Page 21 failed.",
+    "keywords": [],
+    "page_type": "other",
+    "extraction_failed": true
+  },
+  {
+    "chunk_id": "chunk_0022",
+    "chunk_no": 22,
+    "page_no": 22,
+    "batch_no": 5,
+    "heading": "No Heading",
+    "sub_headings": [
+      "3.9 Project Feasibility",
+      "3.9.1 Technical Feasibility",
+      "3.9.2 Economic Feasibility",
+      "3.10 Summary"
+    ],
+    "content": "- **Users**\n  Stores credentials, profiles, and authentication details.\n\n- **Listings**\n  Stores hotels, transport, and tourism services.\n\n- **Bookings**\n  Stores booking records and reservation details.\n\n- **LoyaltyAccount**\n  Maintains loyalty points and tier information.\n\n- **Payments**\n  Stores payment transactions and references.\n\n### 3.9 Project Feasibility\n\n#### 3.9.1 Technical Feasibility\nThe project is technically feasible due to the use of modern and scalable technologies such as FastAPI, ReactJS, Flutter, and Firebase.\n\n#### 3.9.2 Economic Feasibility\nThe proposed system is economically viable because it utilizes open-source technologies and cost-effective cloud infrastructure.\n\n### 3.10 Summary\n\nThis chapter presented the detailed requirements specification for the proposed AI-Assisted Tourism Recommendation and Booking System for Gilgit-Baltistan. It covered system interfaces, functional requirements, non-functional requirements, use cases, resource requirements, database requirements, and project feasibility. These specifications establish the foundation for the system design and implementation phases.",
+    "summary": "The document outlines database requirements for user credentials, listings, bookings, loyalty accounts, and payments, and discusses the technical and economic feasibility of the AI-Assisted Tourism Recommendation and Booking System for Gilgit-Baltistan, summarizing the detailed requirements specification.",
+    "keywords": [
+      "Users",
+      "Listings",
+      "Bookings",
+      "LoyaltyAccount",
+      "Payments",
+      "Technical Feasibility",
+      "Economic Feasibility",
+      "FastAPI",
+      "ReactJS",
+      "Flutter",
+      "Firebase",
+      "requirements specification",
+      "AI-Assisted Tourism"
+    ],
+    "page_type": "content",
+    "extraction_failed": false
+  },
+  {
+    "chunk_id": "chunk_0023",
+    "chunk_no": 23,
+    "page_no": 23,
+    "batch_no": 5,
+    "heading": "Page 23 — Extraction Failed",
+    "sub_headings": [],
+    "content": "",
+    "summary": "Page 23 failed.",
+    "keywords": [],
+    "page_type": "other",
+    "extraction_failed": true
+  },
+  {
+    "chunk_id": "chunk_0024",
+    "chunk_no": 24,
+    "page_no": 24,
+    "batch_no": 5,
+    "heading": "System Modelling and Design of the AI-Assisted Tourism Recommendation and Booking System",
+    "sub_headings": [
+      "4.1 Introduction",
+      "4.2 System Design",
+      "4.3 Design Approach"
+    ],
+    "content": "# 4.1 Introduction\n\nThis chapter presents the system modelling and design of the AI-Assisted Tourism Recommendation and Booking System for Gilgit-Baltistan. It outlines the architectural structure, design principles, and interaction mechanisms that govern the system. The objective of this chapter is to provide a clear representation of how different components of the system collaborate to deliver a scalable, efficient, and user-centric solution.\n\n# 4.2 System Design\n\nThe system follows a Modular Monolith Architecture, where all components are deployed within a single application but are logically separated into independent modules. This design provides a balance between simplicity and scalability, making it suitable for mid-scale systems such as this project.\n\nThe backend is implemented using FastAPI, with functionality divided into multiple routers, each representing a specific domain. These include:\n\n- **Authentication Router:** Handles user registration, login, and JWT token management.\n\n- **Listings Router:** Manages hotels, guides, transport, and dining-related services.\n\n- **Bookings Router:** Processes reservations, booking history, and availability checks.\n\n- **Payments Router:** Handles transaction workflows and payment confirmations.\n\n- **Recommendation Router:** Implements AI-based logic for personalized suggestions.\n\n- **Loyalty Router:** Manages reward points, tiers, and user incentives.\n\nEach router encapsulates its own business logic, data validation, and API endpoints, ensuring separation of concerns while maintaining a unified deployment. This modular approach enhances maintainability, reduces code complexity, and allows future migration to microservices if required.\n\n# 4.3 Design Approach\n\nThe system adopts a RESTful API-based design, enabling seamless communication between the frontend applications and the backend services.\n\n- The Flutter mobile application and ReactJS web interface act as clients that send HTTP requests (GET, POST, PUT, DELETE) to the FastAPI backend.",
+    "summary": "This section details the system design of an AI-Assisted Tourism Recommendation and Booking System for Gilgit-Baltistan, using a Modular Monolith Architecture with FastAPI and RESTful API design for seamless frontend-backend communication.",
+    "keywords": [
+      "AI-Assisted Tourism",
+      "Modular Monolith Architecture",
+      "FastAPI",
+      "RESTful API",
+      "System Design",
+      "Gilgit-Baltistan",
+      "Recommendation System",
+      "Booking System"
+    ],
+    "page_type": "content",
+    "extraction_failed": false
+  },
+  {
+    "chunk_id": "chunk_0025",
+    "chunk_no": 25,
+    "page_no": 25,
+    "batch_no": 5,
+    "heading": "Page 25 — Extraction Failed",
+    "sub_headings": [],
+    "content": "",
+    "summary": "Page 25 failed.",
+    "keywords": [],
+    "page_type": "other",
+    "extraction_failed": true
+  },
+  {
+    "chunk_id": "chunk_0026",
+    "chunk_no": 26,
+    "page_no": 26,
+    "batch_no": 6,
+    "heading": "Page 26 — Extraction Failed",
+    "sub_headings": [],
+    "content": "",
+    "summary": "Page 26 failed.",
+    "keywords": [],
+    "page_type": "other",
+    "extraction_failed": true
+  },
+  {
+    "chunk_id": "chunk_0027",
+    "chunk_no": 27,
+    "page_no": 27,
+    "batch_no": 6,
+    "heading": "No Heading",
+    "sub_headings": [
+      "4.4.4 Administrative Controls"
+    ],
+    "content": "- Access customer details and booking history\n\n[INSERT BOOKING MANAGEMENT IMAGE HERE]\n\n**4.4.4 Administrative Controls**\n\n- Admin users can verify listings and manage platform content\n- Monitor system-wide activity and user engagement\n- Handle disputes, reports, and system moderation\n\n[INSERT ADMIN DASHBOARD IMAGE HERE]",
+    "summary": "This section outlines administrative controls for managing customer details, booking history, and platform content, including verification of listings, monitoring user activity, and handling disputes.",
+    "keywords": [
+      "Administrative Controls",
+      "Booking Management",
+      "Admin Dashboard",
+      "Customer Details",
+      "System Moderation"
+    ],
+    "page_type": "content",
+    "extraction_failed": false
+  },
+  {
+    "chunk_id": "chunk_0028",
+    "chunk_no": 28,
+    "page_no": 28,
+    "batch_no": 6,
+    "heading": "Page 28 — Extraction Failed",
+    "sub_headings": [],
+    "content": "",
+    "summary": "Page 28 failed.",
+    "keywords": [],
+    "page_type": "other",
+    "extraction_failed": true
+  },
+  {
+    "chunk_id": "chunk_0029",
+    "chunk_no": 29,
+    "page_no": 29,
+    "batch_no": 6,
+    "heading": "REFERENCES",
+    "sub_headings": [],
+    "content": "REFERENCES",
+    "summary": "The image shows a page labeled 'REFERENCES' with no additional content or citations listed.",
+    "keywords": [
+      "references",
+      "bibliography",
+      "citation"
+    ],
+    "page_type": "other",
+    "extraction_failed": false
+  }
+]

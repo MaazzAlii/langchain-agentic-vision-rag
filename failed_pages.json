@@ -1,0 +1,69 @@
+{
+  "failed_pages": [
+    {
+      "page_no": 2,
+      "reason": "Empty/invalid JSON from LLM"
+    },
+    {
+      "page_no": 3,
+      "reason": "Empty/invalid JSON from LLM"
+    },
+    {
+      "page_no": 5,
+      "reason": "Empty/invalid JSON from LLM"
+    },
+    {
+      "page_no": 6,
+      "reason": "Empty/invalid JSON from LLM"
+    },
+    {
+      "page_no": 7,
+      "reason": "Empty/invalid JSON from LLM"
+    },
+    {
+      "page_no": 9,
+      "reason": "Empty/invalid JSON from LLM"
+    },
+    {
+      "page_no": 12,
+      "reason": "Empty/invalid JSON from LLM"
+    },
+    {
+      "page_no": 14,
+      "reason": "Empty/invalid JSON from LLM"
+    },
+    {
+      "page_no": 17,
+      "reason": "Empty/invalid JSON from LLM"
+    },
+    {
+      "page_no": 18,
+      "reason": "Empty/invalid JSON from LLM"
+    },
+    {
+      "page_no": 19,
+      "reason": "Empty/invalid JSON from LLM"
+    },
+    {
+      "page_no": 21,
+      "reason": "Empty/invalid JSON from LLM"
+    },
+    {
+      "page_no": 23,
+      "reason": "Empty/invalid JSON from LLM"
+    },
+    {
+      "page_no": 25,
+      "reason": "Empty/invalid JSON from LLM"
+    },
+    {
+      "page_no": 26,
+      "reason": "Empty/invalid JSON from LLM"
+    },
+    {
+      "page_no": 28,
+      "reason": "Empty/invalid JSON from LLM"
+    }
+  ],
+  "total_failures": 16
+}
