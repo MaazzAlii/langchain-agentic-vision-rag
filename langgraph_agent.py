@@ -12,18 +12,19 @@ from typing import TypedDict, List, Optional
 
 # ── State ────────────────────────────────────────────────────────
 class AgentState(TypedDict):
-    user_query:      str
-    selected_dbs:    List[str]
-    is_off_topic:    bool
-    needs_history:   bool
-    db1_results:     str
-    db2_results:     str
-    db3_results:     str
-    db4_results:     str
-    history_context: str
-    final_answer:    str
-    chat_history:    List[dict]
-    error:           Optional[str]
+    user_query:       str
+    selected_dbs:     List[str]
+    is_off_topic:     bool
+    needs_history:    bool
+    db1_results:      str
+    db2_results:      str
+    db3_results:      str
+    db4_results:      str
+    history_context:  str
+    final_answer:     str
+    chat_history:     List[dict]
+    error:            Optional[str]
+    _expanded_query:  str          # Query expanded for better semantic search
 
 # ── Database Manager ─────────────────────────────────────────────
 class DBManager:
@@ -135,6 +136,37 @@ def _get_db():
         _db_manager = DBManager()
     return _db_manager
 
+def _expand_query(query: str) -> str:
+    """
+    Expand/rephrase query for better semantic search.
+    Maps common question patterns to document-friendly search terms.
+    """
+    q = query.lower().strip()
+    expansions = {
+        "technology stack":    "ReactJS Flutter FastAPI Firebase programming languages frameworks",
+        "tech stack":          "ReactJS Flutter FastAPI Firebase programming languages frameworks",
+        "tools used":          "ReactJS Flutter FastAPI Firebase programming languages frameworks",
+        "technologies":        "ReactJS Flutter FastAPI Firebase programming languages frameworks",
+        "what was used":       "technology framework programming language implementation",
+        "how was it built":    "technology framework programming language implementation",
+        "programming language":"ReactJS Flutter FastAPI Firebase programming languages frameworks",
+        "supervisor":          "supervisor guided supervised project mentor teacher",
+        "team":                "team members group students developed built",
+        "architecture":        "system design architecture modular monolith structure components",
+        "database":            "database SQLite Firebase storage data schema",
+        "recommendation":      "recommendation engine counter scoring personalized suggestions",
+        "authentication":      "JWT authentication login registration security token",
+        "payment":             "payment Stripe XPay transaction processing",
+        "mobile app":          "Flutter mobile application Android iOS cross-platform",
+        "web app":             "ReactJS web frontend user interface browser",
+    }
+    for key, expansion in expansions.items():
+        if key in q:
+            print(f"   🔄 Query expanded: '{query}' → '{expansion}'")
+            return expansion
+    return query
+
+
 def router_node(state: AgentState) -> AgentState:
     query     = state["user_query"]
     available = _get_db().available()
@@ -145,29 +177,19 @@ def router_node(state: AgentState) -> AgentState:
     is_off = any(k in query.lower() for k in off_kw)
     needs_hist = any(w in query.lower() for w in ["earlier","before","you said","previous","last time"])
 
+    # Expand query for better retrieval
+    expanded = _expand_query(query)
+
     if not is_off and available:
-        try:
-            prompt = (f'Query: "{query}"\nAvailable DBs: {available}\n'
-                      f'DB labels: {json.dumps(DBManager.LABELS)}\n'
-                      'Return ONLY JSON: {{"selected_dbs":["db1"],"needs_history":false}}')
-            raw = _llm([{"role":"system","content":"Router. JSON only."},
-                        {"role":"user","content":prompt}])
-            raw = raw.strip()
-            if raw.startswith("```"):
-                raw = "\n".join(raw.split("\n")[1:-1])
-            dec = json.loads(raw)
-            sel = [d for d in dec.get("selected_dbs",[]) if d in available]
-            if not sel:
-                sel = available[:1]
-            needs_hist = dec.get("needs_history", needs_hist)
-        except Exception:
-            sel = available[:1]
+        sel = available[:2] if len(available) >= 2 else available[:1]
     else:
         sel = available[:1] if available else ["db1"]
 
     print(f"   🗺️  Decision: off_topic={is_off}, dbs={sel}, history={needs_hist}")
+    # Store expanded query in state for DB nodes to use
     return {**state, "is_off_topic":is_off, "selected_dbs":sel,
-            "needs_history":needs_hist,
+            "needs_history":needs_hist, "user_query": query,
+            "_expanded_query": expanded,
             "db1_results":"","db2_results":"","db3_results":"","db4_results":"",
             "history_context":""}
 
@@ -176,8 +198,11 @@ def _db_node(state, key):
         return state
     print(f"   🔍 Searching {key} ({DBManager.LABELS.get(key,'')})...")
     try:
-        emb = _embed(state["user_query"])
-        res = _get_db().search(key, emb)
+        # Use expanded query for embedding if available
+        search_query = state.get("_expanded_query", "") or state["user_query"]
+        emb = _embed(search_query)
+        # Get top 5 results for better coverage
+        res = _get_db().search(key, emb, n=5)
         return {**state, f"{key}_results": res}
     except Exception as e:
         return {**state, f"{key}_results": f"[Error: {e}]"}
@@ -293,6 +318,7 @@ class LangGraphRAG:
             "db1_results":"","db2_results":"","db3_results":"","db4_results":"",
             "history_context":"","final_answer":"",
             "chat_history":self.chat_history.copy(),"error":None,
+            "_expanded_query": "",
         }
         if self.graph:
             final = self.graph.invoke(state)
