@@ -144,7 +144,63 @@ langchain-agentic-vision-rag/
 
 ## 📸 Screenshots
 
-*Add screenshots to `assets/screenshots/` folder*
+> Tested on **"Attention Is All You Need"** — the famous Transformer paper  
+> by Vaswani et al. (2017) — a 15-page research PDF with math equations,  
+> tables, and technical content.
+
+---
+
+### 1️⃣ Paper Overview — What is this paper about?
+The agent correctly identifies the paper, authors, and key contributions  
+with accurate page citations.
+
+![Overview](assets/screenshots/01_overview.png)
+
+---
+
+### 2️⃣ Transformer Architecture
+Detailed explanation of encoder-decoder structure with page citations.
+
+![Architecture](assets/screenshots/02_architecture.png)
+
+---
+
+### 3️⃣ Key Concept — Attention Mechanism
+The agent explains Scaled Dot-Product Attention and Multi-Head Attention  
+including mathematical formulas extracted from the paper.
+
+![Key Concept](assets/screenshots/03_key_concept.png)
+
+---
+
+### 4️⃣ Multi-turn Conversation — Part 1
+First turn: asking about multi-head attention with full math formulas.
+
+![Multi-turn 1](assets/screenshots/04_multi_turn_1.png)
+
+---
+
+### 5️⃣ Multi-turn Conversation — Part 2
+Follow-up question showing conversation history — agent remembers context  
+from the previous turn without re-searching.
+
+![Multi-turn 2](assets/screenshots/05_multi_turn_2.png)
+
+---
+
+### 6️⃣ Model Results on Translation Tasks
+Specific numerical results (BLEU scores, PPL, parameters) accurately  
+retrieved with exact page citations.
+
+![Results](assets/screenshots/06_results.png)
+
+---
+
+### 7️⃣ Tool Calling Badge — Authors
+Shows the LangGraph agent using `search_db3` tool to retrieve  
+the exact list of 8 authors from Page 1.
+
+![Tool Calling](assets/screenshots/07_tool_calling.png)
 
 ---
 
